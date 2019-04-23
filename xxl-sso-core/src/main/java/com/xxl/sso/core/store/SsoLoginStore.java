@@ -11,7 +11,12 @@ import com.xxl.sso.core.util.JedisUtil;
  */
 public class SsoLoginStore {
 
-    private static int redisExpireMinite = 1440;    // 1440 minite, 24 hour
+    private static int redisExpireMinite = 1440;
+
+    /**
+     *  1440 minite, 24 hour
+     * @param redisExpireMinite
+     */
     public static void setRedisExpireMinite(int redisExpireMinite) {
         if (redisExpireMinite < 30) {
             redisExpireMinite = 30;
