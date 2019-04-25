@@ -33,6 +33,7 @@ public class WebController {
     public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
 
         // login check
+
         XxlSsoUser xxlUser = SsoWebLoginHelper.loginCheck(request, response);
 
         if (xxlUser == null) {

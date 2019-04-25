@@ -2,7 +2,7 @@ package com.xxl.sso.core.store;
 
 import com.xxl.sso.core.conf.Conf;
 import com.xxl.sso.core.user.XxlSsoUser;
-import com.xxl.sso.core.util.JedisUtil;
+import com.xxl.sso.core.util.CaffeineUtil;
 
 /**
  * local login store
@@ -36,7 +36,7 @@ public class SsoLoginStore {
     public static XxlSsoUser get(String storeKey) {
 
         String redisKey = redisKey(storeKey);
-        Object objectValue = JedisUtil.getObjectValue(redisKey);
+        Object objectValue = CaffeineUtil.get(redisKey);
         if (objectValue != null) {
             XxlSsoUser xxlUser = (XxlSsoUser) objectValue;
             return xxlUser;
@@ -51,7 +51,7 @@ public class SsoLoginStore {
      */
     public static void remove(String storeKey) {
         String redisKey = redisKey(storeKey);
-        JedisUtil.del(redisKey);
+        CaffeineUtil.evict(redisKey);
     }
 
     /**
@@ -62,7 +62,7 @@ public class SsoLoginStore {
      */
     public static void put(String storeKey, XxlSsoUser xxlUser) {
         String redisKey = redisKey(storeKey);
-        JedisUtil.setObjectValue(redisKey, xxlUser, redisExpireMinite * 60);  // minite to second
+        CaffeineUtil.put(redisKey, xxlUser);
     }
 
     private static String redisKey(String sessionId){
