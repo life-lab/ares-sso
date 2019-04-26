@@ -13,16 +13,7 @@ import org.springframework.context.ApplicationContext;
 public class XxlSsoServerApplication {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = null;
-        boolean success = true;
-        try {
-            applicationContext = SpringApplication.run(XxlSsoServerApplication.class, args);
-        } catch (Exception e) {
-            success = false;
-            log.info("*****************************启动失败*******************************", e);
-        }
-        if (success) {
-            log.info("*****************************启动成功*******************************");
-        }
+
+        ApplicationContext applicationContext = SpringApplication.run(XxlSsoServerApplication.class, args);
     }
 }

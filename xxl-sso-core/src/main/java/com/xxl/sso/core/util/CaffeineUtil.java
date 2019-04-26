@@ -11,18 +11,19 @@ import java.util.concurrent.Callable;
 public class CaffeineUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(CaffeineUtil.class);
+
     /**
      * 默认本地缓存名称
      */
     private static final String NATIVE_CACHE_NAME = "CAFFEINE-CACHE-UTILS";
     /**
-     * redis缓存管理器,负责redis的缓存实例的创建和管理。
+     * caffeine缓存管理器,负责caffeine的缓存实例的创建和管理。
      *
      * @see CacheManager
      */
     private static final CacheManager caffeineCacheManager = SpringUtil
             .getBean("caffeineCacheManager", CaffeineCacheManager.class);
-    ;
+
 
     /**
      * 本地缓存器
