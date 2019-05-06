@@ -56,6 +56,7 @@ public class CookieUtil {
 	 * @return
 	 */
 	public static String getValue(HttpServletRequest request, String key) {
+		//查询这个request是否有cookie，有=>null,没有=>生成cookie
 		Cookie cookie = get(request, key);
 		if (cookie != null) {
 			return cookie.getValue();

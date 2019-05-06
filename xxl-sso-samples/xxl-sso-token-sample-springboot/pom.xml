@@ -9,7 +9,6 @@
         <version>1.1.1-SNAPSHOT</version>
     </parent>
     <artifactId>xxl-sso-token-sample-springboot</artifactId>
-    <packaging>jar</packaging>
 
     <dependencyManagement>
         <dependencies>
@@ -67,25 +66,5 @@
         </dependency>
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

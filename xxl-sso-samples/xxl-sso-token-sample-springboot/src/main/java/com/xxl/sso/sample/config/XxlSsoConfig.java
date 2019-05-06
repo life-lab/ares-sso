@@ -2,7 +2,6 @@ package com.xxl.sso.sample.config;
 
 import com.xxl.sso.core.conf.Conf;
 import com.xxl.sso.core.filter.XxlSsoTokenFilter;
-import com.xxl.sso.core.util.CaffeineUtil;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -44,7 +43,7 @@ public class XxlSsoConfig implements DisposableBean {
     public void destroy() throws Exception {
 
         // xxl-sso, redis close
-        CaffeineUtil.clear();
+//        CaffeineUtil.clear();
     }
 
 }

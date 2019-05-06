@@ -37,6 +37,15 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
         logger.info("XxlSsoWebFilter init.");
     }
 
+
+    /**
+     * 拦截请求
+     * @param request 请求信息
+     * @param response 返回的信息
+     * @param chain 拦截器链
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;

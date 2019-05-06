@@ -2,7 +2,7 @@ package com.xxl.sso.core.store;
 
 import com.xxl.sso.core.conf.Conf;
 import com.xxl.sso.core.user.XxlSsoUser;
-import com.xxl.sso.core.util.CaffeineUtil;
+import com.xxl.sso.core.util.LocalCacheUtils;
 
 /**
  * local login store
@@ -36,7 +36,7 @@ public class SsoLoginStore {
     public static XxlSsoUser get(String storeKey) {
 
         String redisKey = redisKey(storeKey);
-        Object objectValue = CaffeineUtil.get(redisKey);
+        Object objectValue = LocalCacheUtils.getValue(redisKey);
         if (objectValue != null) {
             XxlSsoUser xxlUser = (XxlSsoUser) objectValue;
             return xxlUser;
@@ -51,7 +51,7 @@ public class SsoLoginStore {
      */
     public static void remove(String storeKey) {
         String redisKey = redisKey(storeKey);
-        CaffeineUtil.evict(redisKey);
+        LocalCacheUtils.remove(redisKey);
     }
 
     /**
@@ -62,7 +62,7 @@ public class SsoLoginStore {
      */
     public static void put(String storeKey, XxlSsoUser xxlUser) {
         String redisKey = redisKey(storeKey);
-        CaffeineUtil.put(redisKey, xxlUser);
+        LocalCacheUtils.put(redisKey, xxlUser);
     }
 
     private static String redisKey(String sessionId){

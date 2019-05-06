@@ -69,6 +69,7 @@ public class SsoWebLoginHelper {
      */
     public static XxlSsoUser loginCheck(HttpServletRequest request, HttpServletResponse response){
 
+        //获取每个请求对应的cookieId
         String cookieSessionId = CookieUtil.getValue(request, Conf.SSO_SESSIONID);
 
         // cookie user
@@ -79,7 +80,7 @@ public class SsoWebLoginHelper {
 
         // redirect user
 
-        // remove old cookie
+        // 删除原来的cookie
         SsoWebLoginHelper.removeSessionIdByCookie(request, response);
 
         // set new cookie
