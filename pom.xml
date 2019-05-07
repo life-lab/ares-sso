@@ -3,34 +3,40 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.xuxueli</groupId>
-    <artifactId>xxl-sso</artifactId>
+    <groupId>com.github.life-lab.sso</groupId>
+    <artifactId>ares-sso</artifactId>
     <version>1.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
     <description>a distributed single-sign-on framework.</description>
 
-
-    <modules>
-        <module>xxl-sso-core</module>
-        <module>xxl-sso-server</module>
-        <module>xxl-sso-samples</module>
-    </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
-        <spring-boot.version>1.5.18.RELEASE</spring-boot.version>
         <spring.version>4.3.21.RELEASE</spring.version>
+        <ares-sso-child.version>1.1.1-SNAPSHOT</ares-sso-child.version>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.life-lab.sso</groupId>
+            <artifactId>ares-sso-core</artifactId>
+            <version>${ares-sso-child.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.life-lab.sso</groupId>
+            <artifactId>ares-sso-server</artifactId>
+            <version>${ares-sso-child.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -63,4 +69,8 @@
     </build>
 
 
+    <modules>
+        <module>ares-sso-core</module>
+        <module>ares-sso-server</module>
+    </modules>
 </project>
