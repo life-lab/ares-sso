@@ -13,17 +13,6 @@
     <artifactId>ares-sso-server</artifactId>
     <name>ares-sso-server</name>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
 
@@ -38,13 +27,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!--&lt;!&ndash; freemarker &ndash;&gt;-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
-         <!--sso core-->
+        <!--sso core-->
         <dependency>
             <groupId>com.github.life-lab.sso</groupId>
             <artifactId>ares-sso-core</artifactId>

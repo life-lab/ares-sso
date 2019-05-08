@@ -22,21 +22,22 @@
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <spring.version>4.3.21.RELEASE</spring.version>
         <ares-sso-child.version>1.1.1-SNAPSHOT</ares-sso-child.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
     </properties>
 
 
-    <dependencies>
-        <dependency>
-            <groupId>com.github.life-lab.sso</groupId>
-            <artifactId>ares-sso-core</artifactId>
-            <version>${ares-sso-child.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.life-lab.sso</groupId>
-            <artifactId>ares-sso-server</artifactId>
-            <version>${ares-sso-child.version}</version>
-        </dependency>
-    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

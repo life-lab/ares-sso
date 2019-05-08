@@ -49,10 +49,10 @@ public class SsoLoginStore {
      *
      * @param storeKey
      */
-    public static void remove(String storeKey) {
-        String redisKey = redisKey(storeKey);
-        LocalCacheUtils.remove(redisKey);
-    }
+//    public static void remove(String storeKey) {
+//        String redisKey = redisKey(storeKey);
+//        LocalCacheUtils.remove(redisKey);
+//    }
 
     /**
      * put

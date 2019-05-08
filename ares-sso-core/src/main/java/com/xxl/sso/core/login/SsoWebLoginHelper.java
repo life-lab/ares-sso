@@ -51,9 +51,9 @@ public class SsoWebLoginHelper {
         }
 
         String storeKey = SsoSessionIdHelper.parseStoreKey(cookieSessionId);
-        if (storeKey != null) {
-            SsoLoginStore.remove(storeKey);
-        }
+//        if (storeKey != null) {
+//            SsoLoginStore.remove(storeKey);
+//        }
 
         CookieUtil.remove(request, response, Conf.SSO_SESSIONID);
     }

@@ -40,7 +40,7 @@ public class SsoTokenLoginHelper {
             return;
         }
 
-        SsoLoginStore.remove(storeKey);
+//        SsoLoginStore.remove(storeKey);
     }
     /**
      * client logout
