@@ -73,5 +73,6 @@
     <modules>
         <module>ares-sso-core</module>
         <module>ares-sso-server</module>
+        <module>ares-sso-samples</module>
     </modules>
 </project>
