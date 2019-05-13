@@ -71,7 +71,7 @@ public class SsoWebLoginHelper {
         //获取每个请求对应的cookieId
         String cookieSessionId = CookieUtil.getValue(request, Conf.SSO_SESSIONID);
 
-        // cookie user
+        // 根据cookieId获取用户信息，获取到，返回user，获取不到？？？
         XxlSsoUser xxlUser = SsoTokenLoginHelper.loginCheck(cookieSessionId);
         if (xxlUser != null) {
             return xxlUser;

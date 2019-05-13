@@ -19,7 +19,6 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(Model model, HttpServletRequest request) {
-
         XxlSsoUser xxlUser = (XxlSsoUser) request.getAttribute(Conf.SSO_USER);
         model.addAttribute("xxlUser", xxlUser);
         return "index";

@@ -33,7 +33,7 @@ public class XxlSsoConfig implements DisposableBean {
 
         registration.setName("XxlSsoWebFilter");
         registration.setOrder(1);
-        registration.addUrlPatterns("/xxl-sso-web-sample-springboot");
+        registration.addUrlPatterns("/*");
         registration.setFilter(new XxlSsoWebFilter());
         registration.addInitParameter(Conf.SSO_SERVER, xxlSsoServer);
         registration.addInitParameter(Conf.SSO_LOGOUT_PATH, xxlSsoLogoutPath);

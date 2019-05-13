@@ -66,6 +66,7 @@ public class SsoTokenLoginHelper {
             return null;
         }
 
+        //从本地缓存获取用户信息
         XxlSsoUser xxlUser = SsoLoginStore.get(storeKey);
         if (xxlUser != null) {
             String version = SsoSessionIdHelper.parseVersion(sessionId);

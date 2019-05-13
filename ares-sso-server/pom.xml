@@ -13,7 +13,6 @@
     <artifactId>ares-sso-server</artifactId>
     <name>ares-sso-server</name>
 
-
     <dependencies>
 
         <!-- web -->

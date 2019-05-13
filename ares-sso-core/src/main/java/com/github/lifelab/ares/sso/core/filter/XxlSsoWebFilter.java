@@ -51,6 +51,8 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
+
+
         // make url
         String servletPath = req.getServletPath();
 
