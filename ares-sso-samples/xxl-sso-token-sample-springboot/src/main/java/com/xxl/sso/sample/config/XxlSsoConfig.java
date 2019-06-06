@@ -2,6 +2,7 @@ package com.xxl.sso.sample.config;
 
 import com.github.lifelab.ares.sso.core.conf.Conf;
 import com.github.lifelab.ares.sso.core.filter.XxlSsoTokenFilter;
+import com.github.lifelab.ares.sso.core.util.JedisUtil;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -31,6 +32,9 @@ public class XxlSsoConfig implements DisposableBean {
     @Bean
     public FilterRegistrationBean xxlSsoFilterRegistration() {
 
+        // xxl-sso, redis init
+        JedisUtil.init(xxlSsoRedisAddress);
+
         // xxl-sso, filter init
         FilterRegistrationBean registration = new FilterRegistrationBean();
 
@@ -49,7 +53,7 @@ public class XxlSsoConfig implements DisposableBean {
     public void destroy() throws Exception {
 
         // xxl-sso, redis close
-//        JedisUtil.close();
+        JedisUtil.close();
     }
 
 }

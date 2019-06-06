@@ -96,7 +96,7 @@ public class WebController {
 
         boolean ifRem = (ifRemember!=null&&"on".equals(ifRemember))?true:false;
 
-        // valid login
+        // 根据输入的用户名和密码去member查，校验能否登陆
         ReturnT<UserInfo> result = userService.findUser(username, password);
         if (result.getCode() != ReturnT.SUCCESS_CODE) {
             redirectAttributes.addAttribute("errorMsg", result.getMsg());

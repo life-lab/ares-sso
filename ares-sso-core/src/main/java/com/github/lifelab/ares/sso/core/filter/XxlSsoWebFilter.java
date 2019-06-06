@@ -44,14 +44,11 @@ public class XxlSsoWebFilter extends HttpServlet implements Filter {
      * @param response 返回的信息
      * @param chain 拦截器链
      * @throws IOException
-     * @throws ServletException
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-
-
 
         // make url
         String servletPath = req.getServletPath();

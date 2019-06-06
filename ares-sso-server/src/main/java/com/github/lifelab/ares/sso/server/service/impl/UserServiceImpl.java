@@ -3,13 +3,23 @@ package com.github.lifelab.ares.sso.server.service.impl;
 import com.github.lifelab.ares.sso.server.core.model.UserInfo;
 import com.github.lifelab.ares.sso.server.core.result.ReturnT;
 import com.github.lifelab.ares.sso.server.service.UserService;
+import com.github.lifelab.leisure.member.application.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+
+    @Resource
+    private MemberService memberService;
+
+
+    //TODO 登录校验，member中没有登录的逻辑
 
     private static List<UserInfo> mockUserList = new ArrayList<>();
     static {
